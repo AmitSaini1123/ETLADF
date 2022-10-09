@@ -1,0 +1,9 @@
+{
+	"name": "ADFA",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84809eea-9b09-4354-ad87-349b3f8b4b37",
+		"tenantId": "92e4d265-7ea1-441a-ab32-a0099bc97ef0"
+	}
+}

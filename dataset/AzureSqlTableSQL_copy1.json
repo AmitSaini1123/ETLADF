@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTableSQL_copy1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dateTable"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

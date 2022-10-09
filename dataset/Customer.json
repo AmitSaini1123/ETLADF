@@ -1,0 +1,67 @@
+{
+	"name": "Customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Customers",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Customers.xlsx",
+				"fileSystem": "inputdata"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
+				"name": "CompanyName",
+				"type": "String"
+			},
+			{
+				"name": "ContactName",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "DivisionID",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "Fax",
+				"type": "String"
+			},
+			{
+				"name": "Phone",
+				"type": "String"
+			},
+			{
+				"name": "PostalCode",
+				"type": "String"
+			},
+			{
+				"name": "StateProvince",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

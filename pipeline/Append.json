@@ -1,0 +1,76 @@
+{
+	"name": "Append",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.Countries",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "CountriesOutput",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Append variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "CountryName",
+								"value": {
+									"value": "@variables('CountriesOutput')",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Countries": {
+				"type": "array",
+				"defaultValue": [
+					"India",
+					"US",
+					"UK"
+				]
+			}
+		},
+		"variables": {
+			"CountryName": {
+				"type": "Array"
+			},
+			"CountriesOutput": {
+				"type": "Array"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-10-09T10:09:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
